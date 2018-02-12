@@ -1,0 +1,26 @@
+
+.Phony: clean 
+CC = gcc
+INCLUDES= -I ../../inc 
+
+CFLAGS = -ansi -Werror -Wall -pedantic
+OBJS = ../../channelCDR/channelCDR.o  
+CFLAGS += $(INCLUDES) -g 
+TESTFILE= readers.o
+EXEFILE= runReaders
+
+test/runChannel : $(OBJS) $(TESTFILE)
+	$(CC) $(CFLAGS) -o $(EXEFILE) $^  
+		
+include depends
+ 
+depends:
+	$(CC) -MM $(INCLUDES) -c $(OBJS:.o=.c) $(TESTFILE:.o=.c) > depends
+
+clean :
+	rm -f depends
+	rm -f $(OBJS)
+	rm -f *.o
+	rm -f runReaders	
+
+

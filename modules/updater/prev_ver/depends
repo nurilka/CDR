@@ -1,0 +1,4 @@
+channelCDR.o: ../channelCDR/channelCDR.c ../../inc/channelCDR.h \
+ ../../inc/ch_protocol.h
+aggregator.o: ../aggregator/aggregator.c ../aggregator/aggregator.h \
+ ../../inc/hashMap.h

@@ -1,0 +1,4 @@
+list.o: list.c ../../inc/list.h list_internal.h
+list_itr.o: list_itr.c ../../inc/list.h list_internal.h \
+ ../../inc/list_itr.h ../../inc/list.h ../../inc/list_functions.h \
+ ../../inc/list_itr.h
